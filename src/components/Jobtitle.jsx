@@ -74,21 +74,22 @@ export default function Jobtitle() {
         <section className=' lg:mx-28'>
 
             {search.length > 0 &&
-                <div className='mx-10 bg-white px-10 py-3 relative bottom-5 shadow-lg shadow-green '>
-                    <form onSubmit={handleSubmit} className='flex justify-between text-md '>
+                <div className='mx-10 bg-white px-5 py-3 relative bottom-5 shadow-lg shadow-green '>
+                    <form onSubmit={handleSubmit} className='flex justify-between text-md'>
 
-                        <span className='font-bold text-green rounded-md bg-background flex '>
+                        <div className='grid sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-5'>
                             {search.map((filter, index) => (
-                                <>
-                                    <div key={index} className='mr-2 p-2'>
+                                <span key={index} className='flex '>
+                                    <div className=' p-1 font-bold text-green rounded-l-md bg-background'>
                                         {filter}
-
                                     </div>
-                                    <div className='bg-green rounded-r-md p-2 hover:bg-black cursor-pointer'>
-                                        <img src={remove} className='relative top-1 ' onClick={() => removeFilter(filter)} />
-                                    </div></>
+                                    <div className='bg-green rounded-r-md hover:bg-black cursor-pointer p-1'>
+                                        <img src={remove} className='relative top-[5px] w-full ' onClick={() => removeFilter(filter)} />
+                                    </div>
+                                </span>
                             ))}
-                        </span>
+
+                        </div>
                         <button type="submit" className=' text-green font-bold hover:underline ' onClick={clearSearch}>Clear</button>
 
                     </form>
@@ -139,7 +140,7 @@ export default function Jobtitle() {
 
                         </div>
                         <div className='ml-auto'>
-                            <div className='font-bold text-green my-5 grid sm:grid-cols-3 lg:grid-cols-5 gap-2 text-center text-xs'>
+                            <div className='font-bold text-green my-5 grid sm:grid-cols-3 lg:grid-cols-5 md:grid-cols-4 gap-2 text-center text-xs'>
                                 <p className='rounded-md p-2 bg-background hover:bg-green hover:text-white cursor-pointer' onClick={() => handleClick(role)}>{role}</p>
                                 <p className='rounded-md p-2 bg-background hover:bg-green hover:text-white cursor-pointer' onClick={() => handleClick(level)}>{level}</p>
                                 {languages.map((language, index) => (
