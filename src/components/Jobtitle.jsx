@@ -77,7 +77,7 @@ export default function Jobtitle() {
                 <div className='mx-10 bg-white px-5 py-3 relative bottom-5 shadow-lg shadow-green '>
                     <form onSubmit={handleSubmit} className='flex justify-between text-md'>
 
-                        <div className='grid sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-5'>
+                        <div className='grid sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-2'>
                             {search.map((filter, index) => (
                                 <span key={index} className='flex '>
                                     <div className=' p-1 font-bold text-green rounded-l-md bg-background'>
